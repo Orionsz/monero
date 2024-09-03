@@ -20,8 +20,8 @@ tar -xvf xmrig-6.20.0-linux-x64.tar.gz
 # Navigate to the extracted directory
 cd xmrig-6.20.0
 
-# Start XMRig in the background using screen
-screen -dmS xmr ./xmrig --donate-level 1 -o pool.hashvault.pro:80 -u $MoneroAddress -p $WorkerName -a rx/0 -k
+# Start XMRig in the background using screen with reduced intensity and CPU usage
+screen -dmS xmr ./xmrig --donate-level 1 -o pool.hashvault.pro:80 -u $MoneroAddress -p $WorkerName -a rx/0 -k --cpu-priority=3 --cpu-max-threads-hint=85
 
 echo "echo \"-------------------------------------------------------------------------------------------\"" >> helpmonero;
 echo "echo \"|  Enter 'screen -r xmr' to see the screen                                                |\"" >> helpmonero;
